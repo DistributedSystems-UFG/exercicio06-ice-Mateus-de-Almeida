@@ -16,9 +16,9 @@ public class PrinterImpl implements Demo.Printer {
     }
 
     @Override
-    public String countChars(String s, Current current) {
-        String result = "Char count: " + s.length();
-        System.out.println("[countChars] " + result);
+    public int countChars(String s, Current current) { // Alterado para int
+        int result = s.length(); // O tamanho da string é um int
+        System.out.println("[countChars] Char count: " + result);
         return result;
     }
 }
