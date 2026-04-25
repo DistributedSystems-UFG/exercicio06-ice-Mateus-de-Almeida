@@ -97,22 +97,22 @@ public interface PrinterPrx extends com.zeroc.Ice.ObjectPrx
         return f;
     }
 
-    default String countChars(String s)
+    default int countChars(String s)
     {
         return countChars(s, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default String countChars(String s, java.util.Map<String, String> context)
+    default int countChars(String s, java.util.Map<String, String> context)
     {
         return _iceI_countCharsAsync(s, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> countCharsAsync(String s)
+    default java.util.concurrent.CompletableFuture<java.lang.Integer> countCharsAsync(String s)
     {
         return _iceI_countCharsAsync(s, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<java.lang.String> countCharsAsync(String s, java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<java.lang.Integer> countCharsAsync(String s, java.util.Map<String, String> context)
     {
         return _iceI_countCharsAsync(s, context, false);
     }
@@ -124,14 +124,14 @@ public interface PrinterPrx extends com.zeroc.Ice.ObjectPrx
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<java.lang.String> _iceI_countCharsAsync(String iceP_s, java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<java.lang.Integer> _iceI_countCharsAsync(String iceP_s, java.util.Map<String, String> context, boolean sync)
     {
-        com.zeroc.IceInternal.OutgoingAsync<java.lang.String> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "countChars", null, sync, null);
+        com.zeroc.IceInternal.OutgoingAsync<java.lang.Integer> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "countChars", null, sync, null);
         f.invoke(true, context, null, ostr -> {
                      ostr.writeString(iceP_s);
                  }, istr -> {
-                     String ret;
-                     ret = istr.readString();
+                     int ret;
+                     ret = istr.readInt();
                      return ret;
                  });
         return f;

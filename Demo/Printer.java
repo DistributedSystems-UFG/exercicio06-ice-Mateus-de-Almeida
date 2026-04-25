@@ -21,7 +21,7 @@ public interface Printer extends com.zeroc.Ice.Object
 
     String printUpperCase(String s, com.zeroc.Ice.Current current);
 
-    String countChars(String s, com.zeroc.Ice.Current current);
+    int countChars(String s, com.zeroc.Ice.Current current);
 
     /** @hidden */
     static final String[] _iceIds =
@@ -103,9 +103,9 @@ public interface Printer extends com.zeroc.Ice.Object
         String iceP_s;
         iceP_s = istr.readString();
         inS.endReadParams();
-        String ret = obj.countChars(iceP_s, current);
+        int ret = obj.countChars(iceP_s, current);
         com.zeroc.Ice.OutputStream ostr = inS.startWriteParams();
-        ostr.writeString(ret);
+        ostr.writeInt(ret);
         inS.endWriteParams(ostr);
         return inS.setResult(ostr);
     }
